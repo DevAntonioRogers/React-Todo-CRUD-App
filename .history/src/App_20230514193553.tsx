@@ -13,10 +13,9 @@ const App = () => {
         <Form />
         <ul>
           {todo.map((todos, index) => (
-            <Todo key={index} todos={todos} />
+            <Todo key={index} todos={"string"} />
           ))}
         </ul>
-        <p>YOU HAVE 2 THINGS TO COMPLETE</p>
       </div>
     </div>
   );

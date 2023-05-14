@@ -12,11 +12,10 @@ const App = () => {
         <h1 className="text-3xl font-bold text-center text-gray-800 p-2">A DEV'S TODO LIST</h1>
         <Form />
         <ul>
-          {todo.map((todos, index) => (
-            <Todo key={index} todos={todos} />
+          {todo.map((todo, index) => (
+            <Todo todo={todo} />
           ))}
         </ul>
-        <p>YOU HAVE 2 THINGS TO COMPLETE</p>
       </div>
     </div>
   );

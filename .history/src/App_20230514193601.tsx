@@ -16,7 +16,6 @@ const App = () => {
             <Todo key={index} todos={todos} />
           ))}
         </ul>
-        <p>YOU HAVE 2 THINGS TO COMPLETE</p>
       </div>
     </div>
   );
