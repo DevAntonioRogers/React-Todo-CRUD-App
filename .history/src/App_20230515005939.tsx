@@ -1,5 +1,5 @@
 import Form from "./components/Form";
-import { FormEventHandler } from "react";
+import { FormEvent, FormEventHandler } from "react";
 import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import { db } from "./components/Firebase";

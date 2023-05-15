@@ -1,22 +1,21 @@
 import Form from "./components/Form";
-import { FormEventHandler } from "react";
+
 import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import { db } from "./components/Firebase";
 import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore";
 
 interface TodoType {
-  text?: string;
-  completed?: boolean;
-  id: string;
+  text: string;
+  completed: boolean;
 }
 
 const App = () => {
-  const [todo, setTodo] = useState<TodoType[]>([]);
+  const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
 
   //Create Todo
-  const createTodo: FormEventHandler<HTMLInputElement> = async (e) => {
+  const createTodo = async (e: React.MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (input === "") {
       alert("Please enter a valid todo");
@@ -43,14 +42,14 @@ const App = () => {
   }, []);
 
   //Update Todo
-  const toggleComplete = async (todo: TodoType) => {
+  const toggleComplete = async (todo) => {
     await updateDoc(doc(db, "todos", todo.id), {
       completed: !todo.completed,
     });
   };
 
   //Delete Todo
-  const deleteTodo = async (id: string) => {
+  const deleteTodo = async (id) => {
     await deleteDoc(doc(db, "todos", id));
   };
 

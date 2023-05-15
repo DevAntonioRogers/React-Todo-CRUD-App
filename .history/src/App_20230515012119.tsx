@@ -16,7 +16,7 @@ const App = () => {
   const [input, setInput] = useState("");
 
   //Create Todo
-  const createTodo: FormEventHandler<HTMLInputElement> = async (e) => {
+  const createTodo: FormEventHandler<HTMLInputElement> = async (e: FormEventHandler<HTMLInputElement>) => {
     e.preventDefault();
     if (input === "") {
       alert("Please enter a valid todo");

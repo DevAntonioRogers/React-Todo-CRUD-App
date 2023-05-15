@@ -1,8 +1,8 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { FormEventHandler } from "react";
+import { FormEvent } from "react";
 
 interface FormPropTypes {
-  createTodo: FormEventHandler<HTMLInputElement>;
+  createTodo: (todoText: string) => void;
   input: string;
   setInput: (input: string) => void;
 }
@@ -17,7 +17,7 @@ const Form = ({ createTodo, input, setInput }: FormPropTypes) => {
         type="text"
         placeholder="Plans for today"
       />
-      <button className="ml-2 rounded-lg text-gray-800">
+      <button type="submit" className="ml-2 rounded-lg text-gray-800">
         <AddCircleIcon />
       </button>
     </form>

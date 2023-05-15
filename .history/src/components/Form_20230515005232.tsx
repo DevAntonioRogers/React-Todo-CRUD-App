@@ -1,13 +1,12 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { FormEventHandler } from "react";
 
 interface FormPropTypes {
-  createTodo: FormEventHandler<HTMLInputElement>;
+  createTodo: (e: React.MouseEvent<HTMLInputElement>) => void;
   input: string;
-  setInput: (input: string) => void;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Form = ({ createTodo, input, setInput }: FormPropTypes) => {
+const Form = ({ createTodo, input, setInput }) => {
   return (
     <form onSubmit={createTodo} className="flex justify-between bg-teal-300 p-4 rounded-lg items-center">
       <input

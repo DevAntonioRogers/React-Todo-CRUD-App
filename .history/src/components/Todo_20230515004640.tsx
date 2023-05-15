@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { TodoType } from "../types";
 
 interface TodoProps {
-  todos: TodoType;
+  todos?: string;
   toggleComplete: (todo: TodoType) => void;
   deleteTodo: (id: string) => void;
 }

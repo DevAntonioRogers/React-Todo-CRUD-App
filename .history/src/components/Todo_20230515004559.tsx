@@ -1,9 +1,9 @@
 import CheckIcon from "@mui/icons-material/Check";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { TodoType } from "../types";
+import { TodoTypes } from "types.ts";
 
 interface TodoProps {
-  todos: TodoType;
+  todos?: string;
   toggleComplete: (todo: TodoType) => void;
   deleteTodo: (id: string) => void;
 }

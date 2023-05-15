@@ -1,5 +1,5 @@
 import Form from "./components/Form";
-import { FormEventHandler } from "react";
+
 import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import { db } from "./components/Firebase";
@@ -16,7 +16,7 @@ const App = () => {
   const [input, setInput] = useState("");
 
   //Create Todo
-  const createTodo: FormEventHandler<HTMLInputElement> = async (e) => {
+  const createTodo = async (e: React.MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (input === "") {
       alert("Please enter a valid todo");
@@ -50,7 +50,7 @@ const App = () => {
   };
 
   //Delete Todo
-  const deleteTodo = async (id: string) => {
+  const deleteTodo = async (id: TodoType) => {
     await deleteDoc(doc(db, "todos", id));
   };
 
