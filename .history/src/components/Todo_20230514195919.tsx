@@ -7,14 +7,14 @@ interface TodoProps {
 
 const Todo = ({ todos }: TodoProps) => {
   return (
-    <li className="p-2 bg-teal-300 my-2 rounded-md uppercase shadow-sm">
+    <li className="p-2 bg-teal-700 my-2 rounded-md uppercase shadow-sm">
       <div className="flex items-center justify-between">
-        <p className="text-gray-700">{todos}</p>
-        <div className="flex gap-3">
-          <button className="">
+        <p>{todos}</p>
+        <div>
+          <button className="bg-green-200 w-full rounded">
             <CheckIcon />
           </button>
-          <button className="">
+          <button className="bg-red-400 w-full rounded">
             <DeleteIcon />
           </button>
         </div>

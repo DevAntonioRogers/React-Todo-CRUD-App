@@ -9,12 +9,12 @@ const Todo = ({ todos }: TodoProps) => {
   return (
     <li className="p-2 bg-teal-300 my-2 rounded-md uppercase shadow-sm">
       <div className="flex items-center justify-between">
-        <p className="text-gray-700">{todos}</p>
-        <div className="flex gap-3">
-          <button className="">
+        <p className="text-white drop-shadow-lg">{todos}</p>
+        <div className="flex gap-2">
+          <button className="bg-green-400 w-full rounded">
             <CheckIcon />
           </button>
-          <button className="">
+          <button className="bg-red-400 w-full rounded">
             <DeleteIcon />
           </button>
         </div>
