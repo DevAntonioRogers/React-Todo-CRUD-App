@@ -11,8 +11,8 @@ const firebaseConfig = {
   authDomain: "todo-app-59d7f.firebaseapp.com",
   projectId: "todo-app-59d7f",
   storageBucket: "todo-app-59d7f.appspot.com",
-  messagingSenderId: "936209896235",
-  appId: "1:936209896235:web:dac5c72f828ad6dbb82b6e",
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase

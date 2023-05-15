@@ -3,7 +3,7 @@ import Form from "./components/Form";
 import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import { db } from "./components/Firebase";
-import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore";
+import { QuerySnapshot, collection, onSnapshot, query, updateDoc } from "firebase/firestore";
 
 const App = () => {
   const [todo, setTodo] = useState([]);
@@ -13,9 +13,9 @@ const App = () => {
   //Read Todo
   useEffect(() => {
     const q = query(collection(db, "todos"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let todosArr = [];
-      querySnapshot.forEach((doc) => {
+      QuerySnapshot.forEach((doc) => {
         todosArr.push({ ...doc.data(), id: doc.id });
       });
       setTodo(todosArr);
@@ -24,11 +24,11 @@ const App = () => {
   }, []);
 
   //Update Todo
-  const toggleComplete = async (todo) => {
-    await updateDoc(doc(db, "todos", todo.id), {
-      completed: !todo.completed,
-    });
-  };
+  const toggleComplete = asyc (todo) => {
+    await updateDoc(doc(db, 'todos', todo.id), {
+      completed: !todo.completed
+    })
+  }
 
   //Delete Todo
 

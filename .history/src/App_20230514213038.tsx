@@ -3,32 +3,26 @@ import Form from "./components/Form";
 import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import { db } from "./components/Firebase";
-import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore";
+import { QuerySnapshot, collection, onSnapshot, query } from "firebase/firestore";
 
 const App = () => {
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodo] = useState(["code", "code more"]);
 
   //Create Todo
 
   //Read Todo
   useEffect(() => {
     const q = query(collection(db, "todos"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let todosArr = [];
-      querySnapshot.forEach((doc) => {
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+      const todosArr = [];
+      QuerySnapshot.forEach((doc) => {
         todosArr.push({ ...doc.data(), id: doc.id });
       });
       setTodo(todosArr);
     });
-    return () => unsubscribe();
+    return () => unsubscribe;
   }, []);
-
   //Update Todo
-  const toggleComplete = async (todo) => {
-    await updateDoc(doc(db, "todos", todo.id), {
-      completed: !todo.completed,
-    });
-  };
 
   //Delete Todo
 
@@ -39,7 +33,7 @@ const App = () => {
         <Form />
         <ul>
           {todo.map((todos, index) => (
-            <Todo key={index} todos={todos} toggleComplete={toggleComplete} />
+            <Todo key={index} todos={todos} />
           ))}
         </ul>
         <p>YOU HAVE 2 THINGS TO COMPLETE</p>

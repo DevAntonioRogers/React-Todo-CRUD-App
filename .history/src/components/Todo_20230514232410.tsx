@@ -3,6 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 interface TodoProps {
   todos: string;
+  toggleComplete: () => string;
 }
 
 const Todo = ({ todos, toggleComplete }: TodoProps) => {
@@ -17,7 +18,7 @@ const Todo = ({ todos, toggleComplete }: TodoProps) => {
           {todos.text}
         </p>
         <div className="flex gap-3">
-          <button onClick={() => toggleComplete(todos)}>
+          <button onClick={() => toggleComplete(void)}>
             <CheckIcon />
           </button>
           <button>

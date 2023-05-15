@@ -19,6 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/components/Firebase.tsx"],
+  "include": ["src", "Firebase.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

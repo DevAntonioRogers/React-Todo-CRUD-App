@@ -13,9 +13,9 @@ const App = () => {
   //Read Todo
   useEffect(() => {
     const q = query(collection(db, "todos"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let todosArr = [];
-      querySnapshot.forEach((doc) => {
+      QuerySnapshot.forEach((doc) => {
         todosArr.push({ ...doc.data(), id: doc.id });
       });
       setTodo(todosArr);

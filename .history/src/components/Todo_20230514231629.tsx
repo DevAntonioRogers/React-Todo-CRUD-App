@@ -5,19 +5,13 @@ interface TodoProps {
   todos: string;
 }
 
-const Todo = ({ todos, toggleComplete }: TodoProps) => {
+const Todo = ({ todos }: TodoProps) => {
   return (
     <li className="p-2 bg-teal-300 my-2 rounded-md uppercase shadow-sm">
       <div className="flex items-center justify-between">
-        <p
-          className={
-            todos.completed ? "text-gray-700 cursor-pointer line-through opacity-20" : "text-gray-700 cursor-pointer"
-          }
-        >
-          {todos.text}
-        </p>
+        <p className="text-gray-700">{todos.text}</p>
         <div className="flex gap-3">
-          <button onClick={() => toggleComplete(todos)}>
+          <button>
             <CheckIcon />
           </button>
           <button>

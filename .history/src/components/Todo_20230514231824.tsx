@@ -5,7 +5,7 @@ interface TodoProps {
   todos: string;
 }
 
-const Todo = ({ todos, toggleComplete }: TodoProps) => {
+const Todo = ({ todos }: TodoProps) => {
   return (
     <li className="p-2 bg-teal-300 my-2 rounded-md uppercase shadow-sm">
       <div className="flex items-center justify-between">
@@ -17,7 +17,7 @@ const Todo = ({ todos, toggleComplete }: TodoProps) => {
           {todos.text}
         </p>
         <div className="flex gap-3">
-          <button onClick={() => toggleComplete(todos)}>
+          <button>
             <CheckIcon />
           </button>
           <button>

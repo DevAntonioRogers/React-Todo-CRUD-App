@@ -26,7 +26,7 @@ const App = () => {
   //Update Todo
   const toggleComplete = async (todo) => {
     await updateDoc(doc(db, "todos", todo.id), {
-      completed: !todo.completed,
+      completed: todo.completed,
     });
   };
 

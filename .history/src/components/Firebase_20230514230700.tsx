@@ -12,7 +12,7 @@ const firebaseConfig = {
   projectId: "todo-app-59d7f",
   storageBucket: "todo-app-59d7f.appspot.com",
   messagingSenderId: "936209896235",
-  appId: "1:936209896235:web:dac5c72f828ad6dbb82b6e",
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase
